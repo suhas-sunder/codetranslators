@@ -781,6 +781,194 @@ function RotUnicodeCard() {
    Page
 ======================== */
 export default function Home({ loaderData }: Route.ComponentProps) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        name: "Dino Word Game",
+        url: "https://dinowordgame.com/",
+        description:
+          "Dino Word Game blends endless runner action with daily word puzzles. Jump obstacles, collect letters, and solve the daily word. Play free in your browser on desktop or mobile.",
+        potentialAction: {
+          "@type": "SearchAction",
+          target: "https://dinowordgame.com/search?q={query}",
+          "query-input": "required name=query",
+        },
+      },
+      {
+        "@type": "VideoGame",
+        name: "Dino Word Game",
+        url: "https://dinowordgame.com/",
+        playMode: "SinglePlayer",
+        applicationCategory: "Game",
+        operatingSystem: "Web",
+        genre: ["Endless Runner", "Word Game", "Puzzle"],
+        description:
+          "A mashup of Chrome's offline dino runner and Wordle style word guessing. Jump cacti, duck pterodactyls, grab letters, and solve the daily word with color feedback.",
+        features: [
+          "Daily word challenge",
+          "Skill plus vocabulary",
+          "Fast and lightweight",
+          "Clean controls",
+          "Share results",
+          "Privacy friendly",
+          "Practice mode",
+          "Accessibility options",
+          "Mobile and desktop play",
+          "Offline runner",
+          "Community sharing",
+          "Speedrunning and challenges",
+          "Learning and vocabulary gains",
+          "Fair play and puzzle integrity",
+          "Regional spelling support",
+          "Color accessibility",
+          "Streak building",
+        ],
+        modes: [
+          "Endless Runner",
+          "Word Puzzle",
+          "Practice Mode",
+          "Daily Challenge",
+          "Hard Mode",
+          "Fewest Guesses",
+          "Time Attack",
+          "Classroom and Family Play",
+        ],
+        accessibility: [
+          "Readable UI",
+          "Input options (keyboard, mouse, touch)",
+          "High contrast palette",
+          "Data light",
+        ],
+        educationalBenefits: [
+          "Vocabulary building",
+          "Phonics warmups",
+          "Letter frequency practice",
+          "Pattern recognition",
+          "Streak strategy",
+        ],
+        deviceSupport: ["Mobile", "Desktop", "Offline play after first load"],
+        community: [
+          "Share results",
+          "Compare streaks",
+          "Invite friends",
+          "Leaderboards (coming soon)",
+        ],
+        glossary: [
+          "Starter word",
+          "Elimination",
+          "Pickups",
+          "Hard mode",
+          "Streak",
+          "Seed",
+        ],
+        tips: [
+          "Balanced openers",
+          "Use pickups for new letters",
+          "Lock guesses after feedback",
+          "Watch obstacle rhythm",
+          "Alternate vowel/consonant probes",
+          "Reserve flex guess",
+          "Practice jump rhythm",
+          "Focus cues for fast play",
+          "Short practice runs for mobile",
+        ],
+        curationPolicy: [
+          "Core set for daily play",
+          "Extended set for advanced practice",
+          "Duplicate letter handling",
+          "Regional spelling support",
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "What is Dino Word Game?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "It is a free browser game that mixes endless runner mechanics with a daily word puzzle. You jump, dodge, and collect letters to guess the hidden word.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Is it free to play?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. It plays instantly in your browser on desktop and mobile.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "When is the word mode available?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "The runner is first. Word mode follows soon after the initial launch.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Does it work offline?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. The runner works offline after your first load. The daily word syncs when you reconnect.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How do controls work?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Tap, click, or press space to jump. Use the down arrow to duck. Controls work on desktop and mobile.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "What is hard mode?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Hard mode requires you to use all revealed hints in your next guess for strict logic and challenge.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Can I share my results?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. Copy a clean text grid to share your win without spoilers. Leaderboards and events are planned.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Is there a practice mode?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. Practice mode offers unlimited runs and random words for warmup and skill building.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Is it accessible?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. The UI is readable, supports keyboard, mouse, and touch, and offers high contrast options.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How does streak building work?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Keep a consistent routine, warm up, and solve the daily word to build your streak.",
+            },
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Header */}
@@ -1335,81 +1523,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            name: "Code Translators",
-            url: "https://codetranslators.com",
-            description:
-              "Free, fast, and accurate code translators. Convert text to Morse, Binary, Hex, Base64, URL encode or decode, ROT13 or custom Caesar, and inspect Unicode. Copy with one click.",
-            potentialAction: {
-              "@type": "SearchAction",
-              target: "https://codetranslators.com/?q={search_term_string}",
-              "query-input": "required name=search_term_string",
-            },
-            mainEntity: [
-              {
-                "@type": "WebPage",
-                name: "Translators",
-                url: "https://codetranslators.com/#translators",
-                description:
-                  "Morse, Binary, Hex, Base64, URL, ROT, Unicode tools.",
-              },
-              {
-                "@type": "WebPage",
-                name: "Features",
-                url: "https://codetranslators.com/#features",
-                description:
-                  "Speed, privacy, accessibility, and advanced options.",
-              },
-              {
-                "@type": "WebPage",
-                name: "Guides",
-                url: "https://codetranslators.com/#guides",
-                description:
-                  "Practical explanations for encoding and decoding.",
-              },
-              {
-                "@type": "WebPage",
-                name: "Examples",
-                url: "https://codetranslators.com/#examples",
-                description:
-                  "Common conversions for Morse, Binary, Hex, Base64, URL, ROT.",
-              },
-              {
-                "@type": "WebPage",
-                name: "Benefits",
-                url: "https://codetranslators.com/#benefits",
-                description:
-                  "Why professionals and learners use Code Translators.",
-              },
-              {
-                "@type": "WebPage",
-                name: "Common Questions",
-                url: "https://codetranslators.com/#common-questions",
-                description: "Direct answers to frequently asked questions.",
-              },
-              {
-                "@type": "WebPage",
-                name: "Use Cases",
-                url: "https://codetranslators.com/#use-cases",
-                description: "When and why you need a code translator.",
-              },
-              {
-                "@type": "WebPage",
-                name: "Step-by-step Guides",
-                url: "https://codetranslators.com/#how-to",
-                description: "Quick instructions for common tasks.",
-              },
-              {
-                "@type": "WebPage",
-                name: "FAQ",
-                url: "https://codetranslators.com/#faq",
-                description:
-                  "Frequently asked questions about privacy, features, and roadmap.",
-              },
-            ],
-          }),
+          __html: JSON.stringify(jsonLd),
         }}
       />
     </div>
